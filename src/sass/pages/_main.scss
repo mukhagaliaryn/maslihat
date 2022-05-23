@@ -147,6 +147,11 @@
                 border-radius: 5px;
                 text-decoration: none;
                 font-size: 14px;
+                transition: all .3s;
+
+                &:hover {
+                    opacity: .7;
+                }
             }
         }
 
@@ -163,6 +168,11 @@
             background-color: #158eca;
             color: white;
             margin-top: 20px;
+            transition: all .3s;
+
+            &:hover {
+                opacity: .7;
+            }
         }
     }
 }
