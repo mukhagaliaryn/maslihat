@@ -1,0 +1,117 @@
+.up-header {
+    background-color: white;
+
+    .up-header-block {
+        width: 1024px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        a {
+            color: #158eca;
+            text-decoration: none;
+            transition: all .3s;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+}
+
+
+.down-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    border-bottom: 1px solid silver;
+
+    .down-header-block {
+        width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+ 
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            
+            a {
+                width: 160px;
+                display: block;
+                display: flex;
+            }
+
+            h3 {
+                margin-left: 10px;
+                font-weight: normal;
+                max-width: 200px;
+            }
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .phone, .email, .social-network {
+                display: flex;
+                align-items: center;
+                margin: 0 20px;
+                font-size: 14px;
+                color: #158eca;
+
+                .value {
+                    padding-left: 10px;
+                }
+            }
+            
+        }
+
+        .search {
+            a {
+                display: block;
+                padding: 10px;
+                border-radius: 5px;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: silver;
+                }
+            }
+        }
+    }
+}
+
+.navbar {
+    background-color: #158eca;
+
+    nav {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+    
+    
+        a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all .3s;
+            font-weight: bold;
+    
+    
+            &:hover {
+                color: silver;
+            }
+        }
+    }
+}
+
+    
