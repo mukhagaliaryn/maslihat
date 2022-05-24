@@ -102,6 +102,152 @@ const Index = () => {
                     <Link href={'/'}><a>Толығырақ</a></Link>
                 </div>
             </div>
+
+            <div className="employments">
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+
+
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+
+                <div className="emp-box">
+                    <div className="image">
+                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
+                    </div>
+                    <div className="rating">
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                    </div>
+                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+
+                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                </div>
+            </div>
+
+            <div className="partners">
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>Послания Президента РК</small>
+                    </a>
+                </Link>
+
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>ЦИК РК</small>
+                    </a>
+                </Link>
+
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>Агентство РК по делам государственной службы</small>
+                    </a>
+                </Link>
+
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>Официальный сайт Парламента РК</small>
+                    </a>
+                </Link>
+
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>Официальный сайт Президента РК</small>
+                    </a>
+                </Link>
+            </div>
         </Layout>
     )
 }
