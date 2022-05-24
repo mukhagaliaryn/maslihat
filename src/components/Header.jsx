@@ -65,14 +65,14 @@ const Header = () => {
             <div className="navbar">
                 <nav>
                     <Link href={'/'}><a>Басты бет</a></Link>
-                    <Link href={'/'}><a>Жаңалықтар</a></Link>
+                    <Link href={'/news'}><a>Жаңалықтар</a></Link>
                     <Link href={'/'}><a>Қызметі</a></Link>
                     <Link href={'/'}><a>Мәслихат</a></Link>
                     <Link href={'/'}><a>Шешім</a></Link>
-                    <Link href={'/'}><a>Құрметті азаматтар</a></Link>
+                    <Link href={'/employments'}><a>Құрметті азаматтар</a></Link>
                     <Link href={'/'}><a>Қоғамдық кеңес</a></Link>
                     <Link href={'/'}><a>Жастар</a></Link>
-                    <Link href={'/'}><a>Байланыс</a></Link>
+                    <Link href={'/contact'}><a>Байланыс</a></Link>
                 </nav>
             </div>
         </React.Fragment>

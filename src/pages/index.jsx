@@ -12,7 +12,7 @@ const Index = () => {
                 <div className="content">
                     <h1>Шаян аудандық мәслихаты</h1>
                     <div className="links">
-                        <Link href={'/'}><a>Жаңалықтар</a></Link>
+                        <Link href={'/news'}><a>Жаңалықтар</a></Link>
                         <Link href={'/'}><a>Тікелей эфир</a></Link>
                     </div>
                 </div>
