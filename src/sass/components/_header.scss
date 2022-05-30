@@ -211,14 +211,12 @@
     }
 
     .navbar {
-        nav {
-            width: 100%;
-            flex-wrap: wrap;
-            justify-content: center;
+        .burger-menu {
+            display: flex;
+        }
 
-            a {
-                padding: 0 10px;
-            }
+        nav {
+            display: none;
         }
     }
 }
@@ -237,14 +235,21 @@
             }
         }
     }
+}
 
-    .navbar {
-        .burger-menu {
-            display: flex;
-        }
-
-        nav {
-            display: none;
+@media screen and (max-width: 570px){
+    .down-header {
+        .down-header-block {
+            .logo {
+                a {
+                    width: 100px;
+                }
+    
+                h3 {
+                    max-width: 160px;
+                    font-size: 16px;
+                }
+            }
         }
     }
 }

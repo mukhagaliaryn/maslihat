@@ -296,6 +296,10 @@
         }
     }
 
+    .partners {
+        flex-wrap: wrap;
+    }
+
 }
 
 
@@ -350,9 +354,5 @@
             }
     
         }
-    }
-
-    .partners {
-        flex-wrap: wrap;
     }
 }
