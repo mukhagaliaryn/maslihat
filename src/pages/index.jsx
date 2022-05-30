@@ -247,6 +247,14 @@ const Index = () => {
                         <small>Официальный сайт Президента РК</small>
                     </a>
                 </Link>
+                <Link href={'/'}>
+                    <a className="box">
+                        <div className="logo">
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                        </div>
+                        <small>Официальный сайт Президента РК</small>
+                    </a>
+                </Link>
             </div>
         </Layout>
     )
