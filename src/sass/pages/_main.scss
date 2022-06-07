@@ -28,7 +28,7 @@
 
             a {
                 padding: 10px 40px;
-                background-color: #158eca;
+                background-color: #085378;
                 box-shadow: 0 0 10px rgb(51, 51, 51);
                 margin: 0 10px;
                 border-radius: 5px;
@@ -47,13 +47,20 @@
 }
 
 .virtual-access {
-    padding: 20px;
-    background-color: #158eca;
+    padding: 20px 50px;
+    background-color: #085378;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+        color: whitesmoke;
+    }
 
     a {
         display: inline-block;
@@ -68,6 +75,7 @@
         }
     }
 }
+
 
 .last-news {
     width: 1280px;
@@ -86,7 +94,7 @@
     }
 
     .assistance {
-        width: 30%;
+        width: 25%;
 
         .image {
             width: 300px;
@@ -111,7 +119,7 @@
 }
 
 .announcement {
-    margin: 20px 0 100px 0;
+    margin: 0 0 100px 0;
 
     h1 {
         padding: 10px 0 20px 0;
@@ -142,7 +150,7 @@
                 display: inline-block;
                 padding: 5px 20px;
                 margin: 10px 0;
-                background-color: #158eca;
+                background-color: #085378;
                 color: white;
                 border-radius: 5px;
                 text-decoration: none;
@@ -165,7 +173,7 @@
             padding: 10px 40px;
             text-decoration: none;
             border-radius: 5px;
-            background-color: #158eca;
+            background-color: #085378;
             color: white;
             margin-top: 20px;
             transition: all .3s;
@@ -182,7 +190,7 @@
     justify-content: center;
     flex-wrap: wrap;
     padding: 100px 20px 50px 20px;
-    background-color: #158eca;
+    background-color: #085378;
 
     .emp-box {
         margin: 10px 20px;
@@ -219,7 +227,7 @@
 .partners {
     display: flex;
     justify-content: center;
-    margin: 50px 20px;
+    padding: 50px 20px;
 
     .box {
         width: 260px;
@@ -245,6 +253,31 @@
 @media screen and (max-width: 1280px) {
     .last-news {
         width: 1024px;
+        padding: 20px 0;
+        justify-content: center;
+        
+        .slider {
+            width: 75%;
+        }
+    
+        .assistance {
+            width: 25%;
+
+            .image {
+                width: 220px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 14px;
+            }
+            ul {
+                font-size: 14px;
+                margin-left: 40px;
+            }
+        }
     }
 }
 
@@ -280,8 +313,17 @@
         flex-direction: column;
         align-items: center;
 
-        .slider, .assistance {
+        .slider {
             width: 100%;
+        }
+
+        .assistance {
+            width: 300px;
+            margin: 20px auto;
+
+            .image {
+                width: 280px;
+            }
         }
     }
 

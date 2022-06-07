@@ -8,7 +8,7 @@ const Index = () => {
 
     return (
         <Layout>
-            <div className="landing" style={{backgroundImage: `url('https://the-steppe.com/images/news/5213-QtH8hW4m.jpg')`}}>
+            <div className="landing" style={{backgroundImage: `url('icons/1.jpg')`}}>
                 <div className="content">
                     <h1>Шаян аудандық мәслихаты</h1>
                     <div className="links">
