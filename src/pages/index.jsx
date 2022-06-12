@@ -3,17 +3,20 @@ import Link from 'next/link';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
+import useTranslation from 'next-translate/useTranslation';
+
 
 const Index = () => {
-
+    const { t } = useTranslation();
+    
     return (
         <Layout>
             <div className="landing" style={{backgroundImage: `url('icons/1.jpg')`}}>
                 <div className="content">
-                    <h1>Шаян аудандық мәслихаты</h1>
+                    <h1>{t("common:main.landing.h1")}</h1>
                     <div className="links">
-                        <Link href={'/news'}><a>Жаңалықтар</a></Link>
-                        <Link href={'/'}><a>Тікелей эфир</a></Link>
+                        <Link href={'/news'}><a>{t("common:main.landing.first")}</a></Link>
+                        <Link href={'/'}><a>{t("common:main.landing.second")}</a></Link>
                     </div>
                 </div>
             </div>

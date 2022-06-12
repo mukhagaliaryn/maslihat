@@ -13,7 +13,7 @@ const Layout = (props) => {
                 <link rel="shortcut icon" href="/icons/logo.png"/>
             </Head>
             <Script>{`
-                console.log("Hello world")
+                
             `}</Script>
             <div id='root'>
                 <div id='root-wrapper'>
@@ -36,7 +36,7 @@ const Layout = (props) => {
 
 
 Layout.defaultProps = {
-    title: "Шымкент қаласы мәслихаты - Ресми сайт",
+    title: "Шаян аудандық мәслихаты - Ресми сайт",
     content: "В соответствии со статьей 9 Закона Республики Казахстан «Об Общественных советах», Туркестанский областной маслихат сообщает о проведении конкурса по избранию членов Общественного совета Туркестанской области."
 }
 

@@ -1,0 +1,146 @@
+
+.window {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+
+    .close-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    .modal-block {
+        width: 100%;
+        padding: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 5px;
+
+        form {
+            display: flex;
+
+            input {
+                display: block;
+                padding: 10px 20px;
+                border: 1px solid silver;
+                border-radius: 5px;
+                font-size: 16px;
+                font-family: "Inter", sans-serif;
+            }
+
+            button {
+                background-color: white;
+                border: 1px solid silver;
+                padding: 0 20px;
+                border-radius: 5px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .up-header-block {
+            display: flex;
+            flex-direction: column;
+    
+            a {
+                color: #085378;
+                text-decoration: none;
+                transition: all .3s;
+    
+                &:hover {
+                    color: gray;
+                }
+            }
+    
+            .lng {
+                display: flex;
+                
+                a {
+                    padding: 0 5px;
+                }
+            }
+        }
+
+
+        nav {
+            border-top: 1px solid silver;
+            padding: 10px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            
+            .menu {
+                position: relative;
+    
+                p {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    transition: all .3s;
+                    font-weight: bold;
+                    cursor: pointer;
+    
+                    &:hover {
+                        color: silver;
+                    }
+                }
+    
+                .select-down {
+                    position: absolute;
+                    background-color: white;
+                    z-index: 10;
+                    box-shadow: 0 0 10px rgb(100, 100, 100);
+                    border-radius: 5px;
+                    width: 300px;
+                    top: 10px;
+    
+                    display: none;
+                    
+                    a {
+                        font-size: 14px;
+                        color: black;
+                        display: block;
+                        font-weight: normal;
+                        text-transform: inherit;
+                        padding: 10px;
+                        border-bottom: 1px solid silver;
+                        transition:  all .4s;
+    
+                        &:hover {
+                            background-color: silver;
+                        }
+                    }
+                }
+    
+                .last {
+                    left: -120px;
+                }
+    
+                &:hover > .select-down {
+                    display: block;
+                }
+            }
+    
+            a {
+                color: black;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: all .3s;
+                font-weight: bold;
+                font-size: 14px;
+        
+                &:hover {
+                    color: silver;
+                }
+            }
+        }
+    }
+}

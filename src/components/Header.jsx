@@ -1,27 +1,48 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from 'react';
-import { Modal } from "./Modal";
+import { MenuhModal, SearchModal } from "./Modal";
+import useTranslation from 'next-translate/useTranslation';
+import { useRouter } from 'next/router';
 
 
 const Header = () => {
+    const router = useRouter();
+    const { t } = useTranslation();
     const [modal, setModal] = useState(false)
+    const [menu, setMenu] = useState(false);
+
     const onModalHandle = () => {
         setModal(prev => !prev);
     }
 
+    const onMenuHandle = () => {
+        setMenu(prev => !prev)
+    }
+
     return (
         <React.Fragment>
-            <Modal showModal={modal} setShowModal={setModal} />
+            <SearchModal showModal={modal} setShowModal={setModal} />
+            <MenuhModal showModal={menu} setShowModal={setMenu} />
             {/* Up Header */}
             <div className="up-header">
                 <div className="up-header-block">
-                    <Link href={'/'}><a>Басты бет</a></Link>
+                    <Link href={'/'}><a>{t("common:header.up-header.first")}</a></Link>
                     <Link href={'/'}><a>Фотогалерея</a></Link>
                     <Link href={'/'}><a>Видеогалерея</a></Link>
-                    <Link href={'/'}><a>Азаматтық бюджет</a></Link>
-                    <Link href={'/'}><a>Нашар көретіндерге арналған нұсқа</a></Link>
-                    <Link href={'/'}><a>Рус</a></Link>
+                    <Link href={'/'}><a>{t("common:header.up-header.second")}</a></Link>
+                    <Link href={'/'}><a>{t("common:header.up-header.third")}</a></Link>
+                    <div className="lng">
+                    {router.locales.map(locale => (
+                        <Link href={router.asPath} locale={locale} key={locale}>
+                            <a>
+                                {locale === "kz" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/kazakhstan.png"/> 
+                                : locale === "ru" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/russian-federation.png"/> : null}
+                            </a>
+                        </Link>
+                    ))}
+                    </div>
+                    
                 </div>
             </div>
 
@@ -33,7 +54,7 @@ const Header = () => {
                             <Image src={'/icons/logo_2.png'} width={785} height={785} />    
                             <Image src={'/icons/logo.png'} width={785} height={785} />    
                         </a></Link>
-                        <h3>Шаян аудандық мәслихаты</h3>
+                        <h3>{t("common:header.logo")}</h3>
                     </div>
                     <div className="contacts">
                         <div className="phone">
@@ -68,65 +89,59 @@ const Header = () => {
            {/* Navbar */}
             <div className="navbar">
                 <div className="burger-menu">
-                    <Image width={30} height={30} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVRoge3WIRIAIBACQM////nMmgzOENyNJGiMAQDk1Bl0dyeK3KqqrfNMFXnFAABI8oXSDACAJF8ozQAA4GcLBQIMFrTHesoAAAAASUVORK5CYII=" />
+                    <div onClick={() => onMenuHandle()}>   
+                        <Image width={30} height={30} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAAQUlEQVRoge3WIRIAIBACQM////nMmgzOENyNJGiMAQDk1Bl0dyeK3KqqrfNMFXnFAABI8oXSDACAJF8ozQAA4GcLBQIMFrTHesoAAAAASUVORK5CYII=" />
+                    </div>
                     
                     <div className="search" onClick={() => onModalHandle()}>
                         <Image width={30} height={30} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABmJLR0QA/wD/AP+gvaeTAAADnUlEQVRoge2avU8UQRjG3zFowoef5EwEKxsbtAHUVuy1IVxDAYlRS2PnV6kWdir6D2AiBYUfsURbopJYgWhiQMAYGznJodHws5jVnO/urXfDzO3F7C+5YjaX93mem7vZd2dOJCcnJyeneTE+iwFbROSIiAyISK+IHBSRLhHpiN6yJiIrIjInIq9EZEpEXhhjNnz6CA6wH7gBfKB+PgDXge6sc/wToBO4C3x3CKr5BowBe7LOlQhQBD57CKr5DAxlne8PQAt2VqvxBRgHTgP9QAHYGr0K0bXTwH1gNaXOHaAl67CtwOMqBmeBEaC1znqjwFyVmo/qqeeVaGaTwpaB85uZjaj2haiW5mEmMw3cSzCzBPR51OgHlhN0bvvSqNVIMcHEDNAVQKsrqq0Z9K1VzUAn8dV4KUTYCs0CMK80PwG7Q2lWiusVuezza5yi20P8N30rtOh+bENQyfmgon/rX1ba6yG/WYJtFyuZpYErJtBOfBG7FkpsC/HeeCSIWLqPs8rDAvYhxbvQMSX0hQyaAKANKCkv/a710j6p42r8xBiz7irkijGmLCJP1eUB13ppgfVK/NxVxANTaux8l0gLfFCNX7uKeEBra281kxZ4nxq/dxXxgNbW3momLXCHGpdcRTywqsbbXQv5X94bg/NeXFrgNTXe4SrigZ1qrL3VTFrgj2p8wFXEA1p7ybVQWuA3anzYVcQDWvuda6G0wC/VWDcijeSEGk97VwCOqnZuNaPWsh346qu1TBNKengY9S70bx/nlIdFwOuJSaXYdSU2R+MfD1eUh0shBbuJbwBcCCYY17+qtEvArtCiY0q0HOQ3FNc9RHyL52Zo3WqbeMuE38R7qzQXAN2ABDMwRJwZoBBAqwC8UlobgL41hQV71qOZB3o8ahxKmFmASV8a9ZhpwZ71aMrY3cX2TdRuB66QfNQC8AMo+sxTq7FW7FlPEsvYDbe2Ouq1Ye+z+tbTVKFbgNspxkrAA+AMtlsrANui197o2llggngH9ZsNYDIKmX3oKPgg9vjDNwtECxT2TKupQu8GbhFvTlwoATdRt56mCx2Z6gKuRbNTL4vARVI6KJ+hQ/xtqVfsvnGf2N3FbrH7Y0bsvtiy2OfZaRF5JiIvjTHUULsoIuMiUtnL/xSRYWPMhMcYzQN23dAz/RMYztpbMPLQeej/O3S11ftU1t6CUSX0Yta+gpIQeiVrT8EBTgHvsY3Myaz95OTk5OS48At/iSvMRteG2wAAAABJRU5ErkJggg=="/>
                     </div>
                 </div>
                 <nav>
-                    <Link href={'/'}><a>Басты бет</a></Link>
-                    <Link href={'/news'}><a>Жаңалықтар</a></Link>
+                    <Link href={'/'}><a>{t("common:header.navbar.first")}</a></Link>
                     <div className="menu">
-                        <p>Қызметі</p>
+                        <p>Аппарат</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>Қазақстан Республикасының заңдары</a></Link>
-                            <Link href={'/'}><a>Регламент</a></Link>
-                            <Link href={'/'}><a>Жаңалықтар анонсы</a></Link>
-                            <Link href={'/'}><a>Сыбайлас жемқорлықпен күрес</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.second.first")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.second.second")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.second.third")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
-                        <p>Мәслихат</p>
+                        <p>Регламент</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>Мәслихат хатшысы</a></Link>
-                            <Link href={'/'}><a>Депутаттар</a></Link>
-                            <Link href={'/'}><a>Тұрақты комиссиялар</a></Link>
-                            <Link href={'/'}><a>Қабылдау кестесі</a></Link>
-                            <Link href={'/'}><a>Мәслихат аппараты</a></Link>
-                            <Link href={'/'}><a>Бос орындар</a></Link>
-                            <Link href={'/'}><a>Хабарландыру</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.third.first")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.third.second")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
-                        <p>Шешім</p>
+                        <p>Сессия</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>Азаматтық бюджет</a></Link>
-                            <Link href={'/'}><a>Нормативтік құқық актілер</a></Link>
-                            <Link href={'/'}><a>Шешім жобалар</a></Link>
-                            <Link href={'/'}><a>Мәслихат шешімдері</a></Link>
-                            <Link href={'/'}><a>Баяндамалар</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.four.first")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.four.second")}</a></Link>
+                        </div>
+                    </div>
+                    <div className="menu">
+                        <p>Комиссия</p>
+                        <div className="select-down">
+                            <Link href={'/'}><a>{t("common:header.navbar.five.first")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.five.second")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.five.third")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.five.four")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.five.five")}</a></Link>
+                        </div>
+                    </div>
+                    <div className="menu">
+                        <p>{t("common:header.navbar.six.label")}</p>
+                        <div className="select-down">
+                            <Link href={'/'}><a>{t("common:header.navbar.six.first")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.six.second")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.six.third")}</a></Link>
+                            <Link href={'/'}><a>{t("common:header.navbar.six.four")}</a></Link>
                         </div>
                     </div>
                     <Link href={'/employments'}><a>Құрметті азаматтар</a></Link>
-                    <div className="menu">
-                        <p>Қоғамдық кеңес</p>
-                        <div className="select-down">
-                            <Link href={'/'}><a>Азаматтық бюджет</a></Link>
-                            <Link href={'/'}><a>Нормативтік құқық актілер</a></Link>
-                            <Link href={'/'}><a>Шешім жобалар</a></Link>
-                            <Link href={'/'}><a>Мәслихат шешімдері</a></Link>
-                            <Link href={'/'}><a>Баяндамалар</a></Link>
-                        </div>
-                    </div>
-                    <div className="menu">
-                        <p>Жастар</p>
-                        <div className="select-down last">
-                            <Link href={'/'}><a>Еріктілер тізімі</a></Link>
-                            <Link href={'/'}><a>Жаңалықтар</a></Link>
-                        </div>
-                    </div>
-                    <Link href={'/contact'}><a>Байланыс</a></Link>
+                    <Link href={'/employments'}><a>Қоғамдық кеңес</a></Link>
                 </nav>
             </div>
         </React.Fragment>
