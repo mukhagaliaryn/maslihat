@@ -17,7 +17,7 @@ export const SearchModal = ({showModal, setShowModal}) => {
             <div className="modal-block">
                 <form>
                     <input type="text" placeholder='Поиск...' />
-                    <button><img src="https://img.icons8.com/ios-glyphs/30/undefined/search--v1.png"/></button>
+                    <button><Image width={30} height={30} src="https://img.icons8.com/ios-glyphs/30/undefined/search--v1.png"/></button>
                 </form>
             </div>
         </div>
@@ -106,9 +106,6 @@ export const MenuhModal = ({showModal, setShowModal}) => {
                     <Link href={'/employments'}><a>Қоғамдық кеңес</a></Link>
                 </nav>
             </div>
-
-
-        
         </div>
         : null}
         </>

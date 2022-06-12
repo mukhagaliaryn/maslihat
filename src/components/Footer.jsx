@@ -1,12 +1,15 @@
+import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 
 const Footer = () => {
+    const { t } = useTranslation();
+
     return (
         <div className="footer">
             <div className="copy">
-                <p>© 2021 Түркістан облыстық мәслихаты</p>
+                <p>{t("common:footer.copy")}</p>
             </div>
-            <Link href={"/"}><a>Сайттың ескі нұсқасына өтіңіз</a></Link>
+            <Link href={"/"}><a>{t("common:footer.old")}</a></Link>
         </div>
     )
 }

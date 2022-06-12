@@ -23,10 +23,10 @@ const Index = () => {
 
             <div className="virtual-access">
                 <div className="content">
-                    <h1>Виртуалдық қабылдау</h1>
-                    <p>Сіздер мұнда өз өтініштеріңізді және ұсыныстарыңызды қалдыра аласыздар</p>
+                    <h1>{t("common:main.virtual-access.h1")}</h1>
+                    <p>{t("common:main.virtual-access.p")}</p>
                 </div>
-                <Link href={'/'}><a>Депутатқа сұрақ қою</a></Link>
+                <Link href={'/'}><a>{t("common:main.virtual-access.button")}</a></Link>
             </div>
 
 
@@ -47,15 +47,15 @@ const Index = () => {
                 <div className="slider">
                     <Carousel autoPlay={true} infiniteLoop={true}>
                         <div>
-                            <img src="/icons/banner.png" />
+                            <Image width={868} height={575} src="/icons/banner.png" />
                             <p className="legend">Аппарат акима г. Шымкента: адреса со входами на карте, отзывы, фото, номера телефонов, время работы и как доехать.</p>
                         </div>
                         <div>
-                            <img src="/icons/1.jpg" />
+                            <Image width={868} height={575} src="/icons/1.jpg" />
                             <p className="legend">Шаян (Бәйдібек ауданы). Тіл · Бақылау · Өңдеу. Шаян — Түркістан облысы Бәйдібек ауданындағы ауыл, 1964 жылдан Қосақжар ауылдық округі орталығы.</p>
                         </div>
                         <div>
-                            <img src="/icons/2.png" />
+                            <Image width={868} height={575} src="/icons/2.png" />
                             <p className="legend">Түркістан облысы (2018 ж. дейін Оңтүстік Қазақстан облысы) – Қазақстан ... маңызы бар қала мәртебесін алып, Оңтүстік Қазақстан облысының құрамынан алынды.</p>
                         </div>
                     </Carousel>
@@ -63,7 +63,7 @@ const Index = () => {
             </div>
 
             <div className="announcement">
-                <h1>Хабарландыру</h1>
+                <h1>{t("common:main.announcement.h1")}</h1>
                 <div className="block">
                     <div className="box">
                         <div className="image">
@@ -71,7 +71,7 @@ const Index = () => {
                         </div>
                         <h3>Кезекті 16 сессия</h3>
                         <p>Ақпан 18, 2022 10:00</p>
-                        <Link href={'/'}><a>Толығырақ</a></Link>
+                        <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
                     </div>
 
                     <div className="box">
@@ -102,7 +102,7 @@ const Index = () => {
                 </div>
 
                 <div className="see-more">
-                    <Link href={'/'}><a>Толығырақ</a></Link>
+                    <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
                 </div>
             </div>
 
@@ -120,7 +120,7 @@ const Index = () => {
                     </div>
                     <h4>Жорабаев Жамалбек Асанұлы</h4>
 
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
+                    <Link href={'/'}><a>{t("common:main.employments.q")}</a></Link>
                 </div>
 
                 <div className="emp-box">
@@ -211,7 +211,7 @@ const Index = () => {
                         <div className="logo">
                             <Image src={'/icons/logo_2.png'} width={100} height={100} />
                         </div>
-                        <small>Послания Президента РК</small>
+                        <small>{t("common:main.partners.first")}</small>
                     </a>
                 </Link>
 
@@ -220,7 +220,7 @@ const Index = () => {
                         <div className="logo">
                             <Image src={'/icons/logo_2.png'} width={100} height={100} />
                         </div>
-                        <small>ЦИК РК</small>
+                        <small>{t("common:main.partners.second")}</small>
                     </a>
                 </Link>
 
@@ -229,7 +229,7 @@ const Index = () => {
                         <div className="logo">
                             <Image src={'/icons/logo_2.png'} width={100} height={100} />
                         </div>
-                        <small>Агентство РК по делам государственной службы</small>
+                        <small>{t("common:main.partners.third")}</small>
                     </a>
                 </Link>
 
@@ -238,7 +238,7 @@ const Index = () => {
                         <div className="logo">
                             <Image src={'/icons/logo_2.png'} width={100} height={100} />
                         </div>
-                        <small>Официальный сайт Парламента РК</small>
+                        <small>{t("common:main.partners.four")}</small>
                     </a>
                 </Link>
 
@@ -247,15 +247,7 @@ const Index = () => {
                         <div className="logo">
                             <Image src={'/icons/logo_2.png'} width={100} height={100} />
                         </div>
-                        <small>Официальный сайт Президента РК</small>
-                    </a>
-                </Link>
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
-                        </div>
-                        <small>Официальный сайт Президента РК</small>
+                        <small>{t("common:main.partners.five")}</small>
                     </a>
                 </Link>
             </div>
