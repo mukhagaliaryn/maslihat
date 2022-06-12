@@ -4,10 +4,14 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
+import { BACKEND_URL } from "../types";
+import { useRouter } from "next/router";
 
 
-const Index = () => {
+const Index = ({anons, news, employees}) => {
+
     const { t } = useTranslation();
+    const router = useRouter()
     
     return (
         <Layout>
@@ -45,19 +49,14 @@ const Index = () => {
                 </div>
 
                 <div className="slider">
-                    <Carousel autoPlay={true} infiniteLoop={true}>
-                        <div>
-                            <Image width={868} height={575} src="/icons/banner.png" />
-                            <p className="legend">Аппарат акима г. Шымкента: адреса со входами на карте, отзывы, фото, номера телефонов, время работы и как доехать.</p>
-                        </div>
-                        <div>
-                            <Image width={868} height={575} src="/icons/1.jpg" />
-                            <p className="legend">Шаян (Бәйдібек ауданы). Тіл · Бақылау · Өңдеу. Шаян — Түркістан облысы Бәйдібек ауданындағы ауыл, 1964 жылдан Қосақжар ауылдық округі орталығы.</p>
-                        </div>
-                        <div>
-                            <Image width={868} height={575} src="/icons/2.png" />
-                            <p className="legend">Түркістан облысы (2018 ж. дейін Оңтүстік Қазақстан облысы) – Қазақстан ... маңызы бар қала мәртебесін алып, Оңтүстік Қазақстан облысының құрамынан алынды.</p>
-                        </div>
+                    <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} >
+                        {news.map((news, i) => (
+                                <div key={i}>
+                                    <Image width={1280} height={720} src="/icons/banner.png" />
+                                    <p className="legend">{router.locale == "kz" ? news.title_kk : news.title}</p>
+                                </div>
+                            )
+                        )}
                     </Carousel>
                 </div>
             </div>
@@ -65,40 +64,16 @@ const Index = () => {
             <div className="announcement">
                 <h1>{t("common:main.announcement.h1")}</h1>
                 <div className="block">
-                    <div className="box">
-                        <div className="image">
-                            <Image src='/icons/banner.png' width={800} height={450} />
+                    {anons.map((anon, i) => (
+                        <div className="box" key={i}>
+                            <div className="image">
+                                <Image src='/icons/banner.png' width={800} height={450} />
+                            </div>
+                            <h3>{router.locale == 'kz' ? anon.title_kk : anon.title}</h3>
+                            <p>{anon.date}</p>
+                            <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
                         </div>
-                        <h3>Кезекті 16 сессия</h3>
-                        <p>Ақпан 18, 2022 10:00</p>
-                        <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
-                    </div>
-
-                    <div className="box">
-                        <div className="image">
-                            <Image src='/icons/banner.png' width={800} height={450} />
-                        </div>
-                        <h3>Кезекті 15 сессия</h3>
-                        <p>Ақпан 18, 2022 10:00</p>
-                        <Link href={'/'}><a>Толығырақ</a></Link>
-                    </div>
-
-                    <div className="box">
-                        <div className="image">
-                            <Image src='/icons/banner.png' width={800} height={450} />
-                        </div>
-                        <h3>Кезекті 14 сессия</h3>
-                        <p>Ақпан 18, 2022 10:00</p>
-                        <Link href={'/'}><a>Толығырақ</a></Link>
-                    </div>
-                    <div className="box">
-                        <div className="image">
-                            <Image src='/icons/banner.png' width={800} height={450} />
-                        </div>
-                        <h3>Кезекті 14 сессия</h3>
-                        <p>Ақпан 18, 2022 10:00</p>
-                        <Link href={'/'}><a>Толығырақ</a></Link>
-                    </div>
+                    ))}
                 </div>
 
                 <div className="see-more">
@@ -121,87 +96,6 @@ const Index = () => {
                     <h4>Жорабаев Жамалбек Асанұлы</h4>
 
                     <Link href={'/'}><a>{t("common:main.employments.q")}</a></Link>
-                </div>
-
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
-                </div>
-
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
-                </div>
-
-
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
-                </div>
-
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
-                </div>
-
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                    <Link href={'/'}><a>Сұрақ қою</a></Link>
                 </div>
             </div>
 
@@ -253,6 +147,23 @@ const Index = () => {
             </div>
         </Layout>
     )
+}
+
+export async function getServerSideProps(context) {
+    
+    const res = await fetch(`${BACKEND_URL}/`)
+    const data = await res.json();
+    const anons = data.anons;
+    const news = data.news;
+    const employees = data.employees;
+
+    return {
+        props: {
+            anons,
+            news,
+            employees
+        }
+    }
 }
 
 export default Index;
