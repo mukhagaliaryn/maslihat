@@ -11,13 +11,13 @@ export const SearchModal = ({showModal, setShowModal}) => {
         {showModal ?
         <div className="window">
             <span className="close-btn" onClick={() => setShowModal(prev => !prev)}>
-                <Image width={24} height={24} src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png"/>
+                <Image width={24} height={24} src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png" alt="image"/>
             </span>
 
             <div className="modal-block">
                 <form>
                     <input type="text" placeholder='Поиск...' />
-                    <button><Image width={30} height={30} src="https://img.icons8.com/ios-glyphs/30/undefined/search--v1.png"/></button>
+                    <button><Image width={30} height={30} src="https://img.icons8.com/ios-glyphs/30/undefined/search--v1.png" alt="image"/></button>
                 </form>
             </div>
         </div>
@@ -36,7 +36,7 @@ export const MenuhModal = ({showModal, setShowModal}) => {
         {showModal ?
         <div className="window">
             <span className="close-btn" onClick={() => setShowModal(prev => !prev)}>
-                <Image width={24} height={24} src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png"/>
+                <Image width={24} height={24} src="https://img.icons8.com/material-outlined/24/undefined/delete-sign.png" alt="image"/>
             </span>
 
             <div className="modal-block">
@@ -50,8 +50,8 @@ export const MenuhModal = ({showModal, setShowModal}) => {
                     {router.locales.map(locale => (
                         <Link href={router.asPath} locale={locale} key={locale}>
                             <a>
-                                {locale === "kz" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/kazakhstan.png"/> 
-                                : locale === "ru" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/russian-federation.png"/> : null}
+                                {locale === "kz" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/kazakhstan.png" alt="image"/> 
+                                : locale === "ru" ? <Image width={24} height={24} src="https://img.icons8.com/color/48/undefined/russian-federation.png" alt="image"/> : null}
                             </a>
                         </Link>
                     ))}

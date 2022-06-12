@@ -37,7 +37,7 @@ const Index = ({anons, news, employees}) => {
             <div className="last-news">
                 <div className="assistance">
                     <div className="image">
-                        <Image src='/icons/narimbetov4.jpg' width={300} height={400} />
+                        <Image src='/icons/narimbetov4.jpg' width={300} height={400} alt="image"/>
                     </div>
                     <h2>Нарымбетов Бахадыр Мәдәліұлы</h2>
                     <p>Шымкент қаласы мәслихатының хатшысы</p>
@@ -52,7 +52,7 @@ const Index = ({anons, news, employees}) => {
                     <Carousel showThumbs={false} autoPlay={true} infiniteLoop={true} >
                         {news.map((news, i) => (
                                 <div key={i}>
-                                    <Image width={1280} height={720} src="/icons/banner.png" />
+                                    <Image width={1280} height={720} src="/icons/banner.png" alt="image"/>
                                     <p className="legend">{router.locale == "kz" ? news.title_kk : news.title}</p>
                                 </div>
                             )
@@ -67,7 +67,7 @@ const Index = ({anons, news, employees}) => {
                     {anons.map((anon, i) => (
                         <div className="box" key={i}>
                             <div className="image">
-                                <Image src='/icons/banner.png' width={800} height={450} />
+                                <Image src='/icons/banner.png' width={800} height={450} alt="image"/>
                             </div>
                             <h3>{router.locale == 'kz' ? anon.title_kk : anon.title}</h3>
                             <p>{anon.date}</p>
@@ -87,11 +87,11 @@ const Index = ({anons, news, employees}) => {
                         <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
                     </div>
                     <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} />
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
                     </div>
                     <h4>Жорабаев Жамалбек Асанұлы</h4>
 
@@ -103,7 +103,7 @@ const Index = ({anons, news, employees}) => {
                 <Link href={'/'}>
                     <a className="box">
                         <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
                         </div>
                         <small>{t("common:main.partners.first")}</small>
                     </a>
@@ -112,7 +112,7 @@ const Index = ({anons, news, employees}) => {
                 <Link href={'/'}>
                     <a className="box">
                         <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
                         </div>
                         <small>{t("common:main.partners.second")}</small>
                     </a>
@@ -121,7 +121,7 @@ const Index = ({anons, news, employees}) => {
                 <Link href={'/'}>
                     <a className="box">
                         <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
                         </div>
                         <small>{t("common:main.partners.third")}</small>
                     </a>
@@ -130,7 +130,7 @@ const Index = ({anons, news, employees}) => {
                 <Link href={'/'}>
                     <a className="box">
                         <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
                         </div>
                         <small>{t("common:main.partners.four")}</small>
                     </a>
@@ -139,7 +139,7 @@ const Index = ({anons, news, employees}) => {
                 <Link href={'/'}>
                     <a className="box">
                         <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} />
+                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
                         </div>
                         <small>{t("common:main.partners.five")}</small>
                     </a>
