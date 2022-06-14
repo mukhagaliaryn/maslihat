@@ -1,4 +1,4 @@
-.contacts {
+.wrapper {
     .title {
         display: flex;
         justify-content: space-between;
@@ -6,21 +6,45 @@
         background-color: #158eca;
         color: white;
 
-        
+        h1 {
+            font-size: 24px;
+        }
     }
 
     .content {
         width: 1280px;
         margin: 20px auto;
         display: flex;
+        justify-content: center;
         align-items: flex-start;
 
-        .contact-list {
-            background-color: white;
-            display: flex;
-            justify-content: center;
-            border: 1px solid silver;
+        .content-list {
+            width: calc(100% - 400px);
             margin: 0 10px;
+
+            .box {
+                display: flex;
+                padding: 10px;
+                border-bottom: 1px solid silver;
+
+                .body {
+                    padding: 0 20px;
+
+                    h2 {
+                        padding-bottom: 20px;
+                    }
+
+                    .phone, .email {
+                        margin-top: 20px;
+                        display: flex;
+                        align-items: center;
+
+                        span {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+            }
 
             .mail, .phones, .facs, .adress {
                 margin: 0 5px;
@@ -38,7 +62,7 @@
         }
 
         .presidents {
-            width: 400px;
+            width: 260px;
 
 
             .box {
@@ -52,18 +76,27 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .contacts {
+    .wrapper {
     
         .content {
             width: 1024px;
+
+            .content-list {
+                width: 100%;
+            }
         }
     }
     
 }
 
 @media screen and (max-width: 1024px) {
-    .contacts {
-    
+    .wrapper {
+        .title {
+            h1 {
+                font-size: 20px;
+                text-align: center;
+            }
+        }
         .content {
             width: 100%;
 

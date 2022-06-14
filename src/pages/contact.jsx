@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../layouts';
-import Link from 'next/link';
-import Image from 'next/image';
+import President from '../components/Kings';
 
 
 const Contact = () => {
@@ -34,29 +33,7 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <div className="presidents">
-                        <div className="box">
-                            <div className="image">
-                                <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} alt="image"/>
-                                <h4>Нұрсұлтан Әбішұлы Назарбаев</h4>
-                                <small>Қазақстан Республикасының Тұңғыш Президенті - Елбасы</small>
-                            </div>
-                        </div>
-                        <div className="box">
-                            <div className="image">
-                                <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} alt="image"/>
-                                <h4>Қасым-Жомарт Кемелұлы Тоқаев</h4>
-                                <small>Қазақстан Республикасының Президенті</small>
-                            </div>
-                        </div>
-                        <div className="box">
-                            <div className="image">
-                                <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} alt="image"/>
-                                <h4>Нарымбетов Бахадыр Мәдәліұлы</h4>
-                                <small>Шымкент қаласы мәслихатының хатшысы</small>
-                            </div>
-                        </div>
-                    </div>
+                    <President />
                 </div>
             </div>
         </Layout>

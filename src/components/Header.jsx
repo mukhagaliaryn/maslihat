@@ -102,46 +102,46 @@ const Header = () => {
                     <div className="menu">
                         <p>Аппарат</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.second.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.second.second")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.second.third")}</a></Link>
+                            <Link href={'/apparat'}><a>{t("common:header.navbar.second.first")}</a></Link>
+                            <Link href={'/apparat/adep'}><a>{t("common:header.navbar.second.second")}</a></Link>
+                            <Link href={'/apparat/apparat-man'}><a>{t("common:header.navbar.second.third")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
                         <p>Регламент</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.third.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.third.second")}</a></Link>
+                            <Link href={'/reglament'}><a>{t("common:header.navbar.third.first")}</a></Link>
+                            <Link href={'/reglament/plan'}><a>{t("common:header.navbar.third.second")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
                         <p>Сессия</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.four.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.four.second")}</a></Link>
+                            <Link href={'/session'}><a>{t("common:header.navbar.four.first")}</a></Link>
+                            <Link href={'/session/sheshym-list'}><a>{t("common:header.navbar.four.second")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
                         <p>Комиссия</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.five.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.second")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.third")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.four")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.five")}</a></Link>
+                            <Link href={'/comission'}><a>{t("common:header.navbar.five.first")}</a></Link>
+                            <Link href={'/comission/com-place'}><a>{t("common:header.navbar.five.second")}</a></Link>
+                            <Link href={'/comission/work-plan'}><a>{t("common:header.navbar.five.third")}</a></Link>
+                            <Link href={'/comission/todo'}><a>{t("common:header.navbar.five.four")}</a></Link>
+                            <Link href={'/comission/success-work'}><a>{t("common:header.navbar.five.five")}</a></Link>
                         </div>
                     </div>
                     <div className="menu">
                         <p>{t("common:header.navbar.six.label")}</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.six.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.second")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.third")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.four")}</a></Link>
+                            <Link href={'/deputats'}><a>{t("common:header.navbar.six.first")}</a></Link>
+                            <Link href={'/deputats/maslihat'}><a>{t("common:header.navbar.six.second")}</a></Link>
+                            <Link href={'/deputats/employees'}><a>{t("common:header.navbar.six.third")}</a></Link>
+                            <Link href={'/deputats/qabylday'}><a>{t("common:header.navbar.six.four")}</a></Link>
                         </div>
                     </div>
-                    <Link href={'/employments'}><a>Құрметті азаматтар</a></Link>
-                    <Link href={'/employments'}><a>Қоғамдық кеңес</a></Link>
+                    <Link href={'/employments'}><a>{t("common:header.navbar.seven")}</a></Link>
+                    <Link href={'/employments'}><a>{t("common:header.navbar.eight")}</a></Link>
                 </nav>
             </div>
         </React.Fragment>

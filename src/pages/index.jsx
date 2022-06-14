@@ -82,21 +82,24 @@ const Index = ({anons, news, employees}) => {
             </div>
 
             <div className="employments">
-                <div className="emp-box">
-                    <div className="image">
-                        <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} />
-                    </div>
-                    <div className="rating">
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                        <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                    </div>
-                    <h4>Жорабаев Жамалбек Асанұлы</h4>
+                {employees.map((emp, i) => (
+                    <div className="emp-box" key={i}>
+                        <div className="image">
+                            <Image src={emp.image} width={300} height={400} />
+                        </div>
+                        <div className="rating">
+                            <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                            <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                            <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                            <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                            <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
+                        </div>
+                        <h4>{emp.fio}</h4>
 
-                    <Link href={'/'}><a>{t("common:main.employments.q")}</a></Link>
-                </div>
+                        <Link href={'/'}><a>{t("common:main.employments.q")}</a></Link>
+                    </div>
+                ))}
+                
             </div>
 
             <div className="partners">
