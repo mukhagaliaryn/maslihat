@@ -22,6 +22,8 @@
             width: calc(100% - 400px);
             margin: 0 10px;
 
+
+            // ================================================
             .box {
                 display: flex;
                 padding: 10px;
@@ -46,30 +48,198 @@
                 }
             }
 
-            .mail, .phones, .facs, .adress {
-                margin: 0 5px;
-                padding: 20px;
+            .file-box {
+                display: flex;
+                justify-content: space-around;
+                border-top: 1px solid silver;
+                border-bottom: 1px solid silver;
+                margin: 10px 0;
+                align-items: center;
+                padding: 10px;
 
                 h4 {
-                    padding-bottom: 10px;
+                    width: 90%;
+                    font-size: 14px;
+                }
+                a {
+                    text-align: center;
+                    width: 10%;
+                }
+            }
+
+            // ==================================================
+            .reglament {
+                .head {
+                    span {
+                        display: block;
+                        width: 300px;
+                        text-align: right;
+                        margin-left: auto;
+                        margin-right: 20px;
+                        font-size: 14px;
+                    }                
+                }
+
+                h4 {
+                    text-align: center;
+                    padding: 20px 0;
+                }
+
+                .reg-list{
+                    display: flex;
+                    flex-direction: column;
+
+                    .reg-box {
+                        h4 {
+                            border-bottom: 1px solid silver;
+                        }
+    
+                        span {
+                            display: block;
+                            padding: 20px;
+                            font-size: 14px;
+                            border-bottom: 1px solid silver;
+                        }
+                    }
+                }
+
+                .plan-list {
+                    display: flex;
+                    flex-direction: column;
+
+                    .plan-box {
+                        margin-bottom: 5px;
+                        border: 1px solid silver;
+
+                        h4 {
+                            text-align: left;
+                            padding-left: 20px;
+                            border-bottom: 1px solid silver;
+                        }
+    
+                        span {
+                            display: block;
+                            padding: 20px;
+                            font-size: 14px;
+                            border-bottom: 1px solid silver;
+                        }
+                    }
+                }
+            }
+            // =====================================================
+
+            .employees {
+                display: flex;
+                flex-wrap: wrap;
+
+                .emp-box {
+                    margin: 5px 10px;
+                    text-align: center;
+            
+                    .image {
+                        width: 240px;
+                    }
+            
+                    h4 {
+                        margin-top: 10px;
+                    }
+            
+                    a {
+                        display: block;
+                        width: 100%;
+                        padding: 10px;
+                        border: 1px solid #158eca;
+                        background-color: #158eca;
+                        color: white;
+                        margin-top: 20px;
+                        text-decoration: none;
+                        transition: all .5s;
+            
+                        &:hover {
+                            background-color: white;
+                            color: #158eca;
+                            border: 1px solid #158eca;
+                        }
+                    }
+                }
+            }
+            // ==================================================
+            .news-box {
+                background-color: white;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px silver;
+
+                h4 {
+                    padding: 10px 0;
                     border-bottom: 1px solid silver;
                 }
 
                 p {
-                    padding-top: 10px;
+                    margin-top: 10px;
+                }
+
+                small {
+                    margin-top: 10px;
+                    display: block;
+                }
+
+                a {
+                    padding: 10px 20px;
+                    background-color: black;
+                    color: white;
+                    display: inline-block;
+                    margin: 10px 0;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: all .3s;
+
+                    &:hover {
+                        opacity: .7;
+                    }
+                }
+            }
+
+            // ======================================================
+
+            .contact-list {
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                border: 1px solid silver;
+                margin: 0 10px;
+    
+                .mail, .phones, .facs, .adress {
+                    margin: 0 5px;
+                    padding: 20px;
+    
+                    h4 {
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid silver;
+                    }
+    
+                    p {
+                        padding-top: 10px;
+                    }
                 }
             }
         }
 
+
+        // ================================================
+
         .presidents {
-            width: 260px;
+            width: 280px;
 
 
             .box {
-                background: white;
-                border: 1px solid silver;
                 margin-bottom: 20px;
                 text-align: center;
+
+                h4, small {
+                    padding: 0 10px;
+                }
             }
         }
     }

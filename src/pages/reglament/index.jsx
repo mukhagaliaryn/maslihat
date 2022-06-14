@@ -3,8 +3,10 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import President from '../../components/Kings';
 import Layout from '../../layouts';
+import { BACKEND_URL } from '../../types';
+import ReactHtmlParser from 'react-html-parser';
 
-const Reglament = () => {
+const Reglament = ({data}) => {
     const { t } = useTranslation();
     const router = useRouter()
 
@@ -17,7 +19,20 @@ const Reglament = () => {
 
                 <div className="content">
                     <div className="content-list">
-                        
+                        <div className="reglament">
+                            <div className="head">
+                                <span>{t("common:reglament.reg.first")}</span>
+                            </div>
+                            <div className="reg-list">
+                                <h4>{t("common:reglament.reg.second")}</h4>
+                                {data.map((solution, i) => (
+                                    <div className="reg-box" key={i}>
+                                        <h4>{router.locale == "kz" ? solution.title_kk : solution.title}</h4>
+                                        <span>{ReactHtmlParser(router.locale == "kz" ? solution.content_kk: solution.content)}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     <President />
@@ -26,5 +41,19 @@ const Reglament = () => {
         </Layout>
     )
 }
+
+export async function getServerSideProps(context) {
+    
+    const res = await fetch(`${BACKEND_URL}/solution/category/2`)
+    const data = await res.json();
+
+
+    return {
+        props: {
+            data
+        }
+    }
+}
+
 
 export default Reglament;

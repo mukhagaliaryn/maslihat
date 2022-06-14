@@ -41,11 +41,11 @@ export const MenuhModal = ({showModal, setShowModal}) => {
 
             <div className="modal-block">
                 <div className="up-header-block">
-                    <Link href={'/'}><a>{t("common:header.up-header.first")}</a></Link>
-                    <Link href={'/'}><a>Фотогалерея</a></Link>
-                    <Link href={'/'}><a>Видеогалерея</a></Link>
-                    <Link href={'/'}><a>{t("common:header.up-header.second")}</a></Link>
-                    <Link href={'/'}><a>{t("common:header.up-header.third")}</a></Link>
+                    <a href={'/'}>{t("common:header.up-header.first")}</a>
+                    <a href={'/'}>Фотогалерея</a>
+                    <a href={'/'}>Видеогалерея</a>
+                    <a href={'/'}>{t("common:header.up-header.second")}</a>
+                    <a href={'/'}>{t("common:header.up-header.third")}</a>
                     <div className="lng">
                     {router.locales.map(locale => (
                         <Link href={router.asPath} locale={locale} key={locale}>
@@ -72,38 +72,38 @@ export const MenuhModal = ({showModal, setShowModal}) => {
                     <div className="menu">
                         <p>Регламент</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.third.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.third.second")}</a></Link>
+                            <a href={'/'}>{t("common:header.navbar.third.first")}</a>
+                            <a href={'/'}>{t("common:header.navbar.third.second")}</a>
                         </div>
                     </div>
                     <div className="menu">
                         <p>Сессия</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.four.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.four.second")}</a></Link>
+                            <a href={'/'}>{t("common:header.navbar.four.first")}</a>
+                            <a href={'/'}>{t("common:header.navbar.four.second")}</a>
                         </div>
                     </div>
                     <div className="menu">
                         <p>Комиссия</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.five.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.second")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.third")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.four")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.five.five")}</a></Link>
+                            <a href={'/'}>{t("common:header.navbar.five.first")}</a>
+                            <a href={'/'}>{t("common:header.navbar.five.second")}</a>
+                            <a href={'/'}>{t("common:header.navbar.five.third")}</a>
+                            <a href={'/'}>{t("common:header.navbar.five.four")}</a>
+                            <a href={'/'}>{t("common:header.navbar.five.five")}</a>
                         </div>
                     </div>
                     <div className="menu">
                         <p>{t("common:header.navbar.six.label")}</p>
                         <div className="select-down">
-                            <Link href={'/'}><a>{t("common:header.navbar.six.first")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.second")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.third")}</a></Link>
-                            <Link href={'/'}><a>{t("common:header.navbar.six.four")}</a></Link>
+                            <a href={'/'}>{t("common:header.navbar.six.first")}</a>
+                            <a href={'/'}>{t("common:header.navbar.six.second")}</a>
+                            <a href={'/'}>{t("common:header.navbar.six.third")}</a>
+                            <a href={'/'}>{t("common:header.navbar.six.four")}</a>
                         </div>
                     </div>
-                    <Link href={'/employments'}><a>Құрметті азаматтар</a></Link>
-                    <Link href={'/employments'}><a>Қоғамдық кеңес</a></Link>
+                    <a href={'/employments'}>{t("common:header.navbar.seven")}</a>
+                    <a href={'/public'}>{t("common:header.navbar.eight")}</a>
                 </nav>
             </div>
         </div>

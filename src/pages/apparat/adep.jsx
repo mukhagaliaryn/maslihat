@@ -18,7 +18,7 @@ const Adep = () => {
                 <div className="content">
                     
                     <div className="content-list">
-                        <span>
+                        <span style={{fontSize: "14px"}}>
                             {router.locale == 'kz' ?
                                 `Қазақстан Республикасы Президентінің 2015 жылғы 29 желтоқсандағы Жарлығына сәйкес
                                 этикалық нормалар мен қағидаларды одан әрі жетілдіру жөніндегі шаралар туралы "№153

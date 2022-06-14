@@ -56,7 +56,6 @@ export async function getServerSideProps(context) {
     const res = await fetch(`${BACKEND_URL}/employees/category/2`)
     const data = await res.json();
 
-    console.log(data);
 
     return {
         props: {

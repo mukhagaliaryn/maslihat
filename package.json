@@ -13,6 +13,7 @@
     "next-translate": "^1.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-html-parser": "^2.0.2",
     "react-responsive-carousel": "^3.2.23",
     "sass": "^1.51.0"
   },

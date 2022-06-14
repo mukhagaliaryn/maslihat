@@ -28,10 +28,10 @@ const Header = () => {
             <div className="up-header">
                 <div className="up-header-block">
                     <Link href={'/'}><a>{t("common:header.up-header.first")}</a></Link>
-                    <Link href={'/'}><a>Фотогалерея</a></Link>
+                    <Link href={'/'}><a >Фотогалерея</a></Link>
                     <Link href={'/'}><a>Видеогалерея</a></Link>
                     <Link href={'/'}><a>{t("common:header.up-header.second")}</a></Link>
-                    <Link href={'/'}><a>{t("common:header.up-header.third")}</a></Link>
+                    <Link href={'/contact'}><a>{t("common:header.up-header.third")}</a></Link>
                     <div className="lng">
                     {router.locales.map(locale => (
                         <Link href={router.asPath} locale={locale} key={locale}>
@@ -98,7 +98,7 @@ const Header = () => {
                     </div>
                 </div>
                 <nav>
-                    <Link href={'/'}><a>{t("common:header.navbar.first")}</a></Link>
+                    <Link href={'/'}><a className={router.pathname == "/" ? "active" : ""}>{t("common:header.navbar.first")}</a></Link>
                     <div className="menu">
                         <p>Аппарат</p>
                         <div className="select-down">
@@ -140,8 +140,8 @@ const Header = () => {
                             <Link href={'/deputats/qabylday'}><a>{t("common:header.navbar.six.four")}</a></Link>
                         </div>
                     </div>
-                    <Link href={'/employments'}><a>{t("common:header.navbar.seven")}</a></Link>
-                    <Link href={'/employments'}><a>{t("common:header.navbar.eight")}</a></Link>
+                    <Link href={'/employments'}><a className={router.pathname == "/employments" ? "active" : ""}>{t("common:header.navbar.seven")}</a></Link>
+                    <Link href={'/public'}><a className={router.pathname == "/public" ? "active" : ""}>{t("common:header.navbar.eight")}</a></Link>
                 </nav>
             </div>
         </React.Fragment>
