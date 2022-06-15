@@ -180,6 +180,13 @@
                     margin-top: 10px;
                 }
 
+                .date {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 110px;
+                }
+
                 small {
                     margin-top: 10px;
                     display: block;
@@ -199,6 +206,34 @@
                         opacity: .7;
                     }
                 }
+            }
+
+            .news-body {
+                text-align: center;
+                
+                h4 {
+                    padding: 20px;
+                    border-bottom: 1px solid silver;
+                    
+                }
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 20px;
+                    border-bottom: 1px solid silver;
+                    small {
+                        margin-left: 10px;
+                    }
+                }
+
+                .body {
+                    padding: 20px;
+                    font-size: 14px;
+                    text-align: left;
+                }
+                    
+                
             }
 
             // ======================================================
@@ -279,4 +314,22 @@
         }
     }
     
+}
+
+@media screen and (max-width: 620px) {
+    .wrapper {
+        .content {
+            .content-list {
+                .employees {
+                    justify-content: center;
+
+                    .emp-box {
+                        .image {
+                            width: 280px;
+                        }
+                    }
+                }
+            }
+        }
+    }    
 }

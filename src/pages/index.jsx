@@ -6,6 +6,7 @@ import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import { BACKEND_URL } from "../types";
 import { useRouter } from "next/router";
+import Partner from "../components/Partners";
 
 
 const Index = ({anons, news, employees}) => {
@@ -101,53 +102,8 @@ const Index = ({anons, news, employees}) => {
                 ))}
                 
             </div>
-
-            <div className="partners">
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
-                        </div>
-                        <small>{t("common:main.partners.first")}</small>
-                    </a>
-                </Link>
-
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
-                        </div>
-                        <small>{t("common:main.partners.second")}</small>
-                    </a>
-                </Link>
-
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
-                        </div>
-                        <small>{t("common:main.partners.third")}</small>
-                    </a>
-                </Link>
-
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
-                        </div>
-                        <small>{t("common:main.partners.four")}</small>
-                    </a>
-                </Link>
-
-                <Link href={'/'}>
-                    <a className="box">
-                        <div className="logo">
-                            <Image src={'/icons/logo_2.png'} width={100} height={100} alt="image"/>
-                        </div>
-                        <small>{t("common:main.partners.five")}</small>
-                    </a>
-                </Link>
-            </div>
+            
+            <Partner />
         </Layout>
     )
 }

@@ -1,1 +1,1 @@
-export const BACKEND_URL = 'https://djars500.pythonanywhere.com/api/';
+export const BACKEND_URL = 'https://djars500.pythonanywhere.com/api';

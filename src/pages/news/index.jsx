@@ -1,13 +1,14 @@
 import React from 'react';
 import Layout from '../../layouts';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
 import President from '../../components/Kings';
+import { BACKEND_URL } from '../../types';
 
 
-const News = () => {
+const News = ({data}) => {
     const { t } = useTranslation();
     const router = useRouter()
 
@@ -19,28 +20,17 @@ const News = () => {
                 </div>
                 <div className="content">
                     <div className="content-list">
+                        {data.map((news, i) => (
+                            <div className="news-box" key={i}>
+                                <h4>{router.locale == "kz" ? news.title_kk : news.title}</h4>
+                                <small className="date">
+                                    <Image width={20} height={20} src="https://img.icons8.com/ios/50/undefined/timer.png"/>
+                                    {news.date}
+                                </small>
 
-                        <div className="news-box">
-                            <h4>ТЕАТРДА РЕФЕРЕНДУМ БОЙЫНША ТҮСІНДІРМЕ ЖҰМЫСТАРЫ ЖҮРГІЗІЛДI</h4>
-                            <p>ТЕАТРДА РЕФЕРЕНДУМ БОЙЫНША ТҮСІНДІРМЕ ЖҰМЫСТАРЫ ЖҮРГІЗІЛДI 
-                                Шымкент қаласындағы Орыс драма театрында республикалық 
-                                референдумды ұйымдастыру және ел тұрғындарын
-                            </p>
-                            <small className="date">25.05.2022</small>
-
-                            <Link href={'/'}><a>Ары қарай оқу</a></Link>
-                        </div>
-
-                        <div className="news-box">
-                            <h4>ТЕАТРДА РЕФЕРЕНДУМ БОЙЫНША ТҮСІНДІРМЕ ЖҰМЫСТАРЫ ЖҮРГІЗІЛДI</h4>
-                            <p>ТЕАТРДА РЕФЕРЕНДУМ БОЙЫНША ТҮСІНДІРМЕ ЖҰМЫСТАРЫ ЖҮРГІЗІЛДI 
-                                Шымкент қаласындағы Орыс драма театрында республикалық 
-                                референдумды ұйымдастыру және ел тұрғындарын
-                            </p>
-                            <small className="date">25.05.2022</small>
-
-                            <Link href={'/'}><a>Ары қарай оқу</a></Link>
-                        </div>
+                                <Link href={`/news/${encodeURIComponent(news.id)}`}><a>{t("common:news.btn")}</a></Link>
+                            </div>
+                        ))}
                     </div>
 
                     <President />
@@ -50,5 +40,18 @@ const News = () => {
         </Layout>
     )
 }
+
+export async function getServerSideProps(context) {
+
+    const response = await fetch(`${BACKEND_URL}/news`)
+    const data = await response.json();
+
+    return {
+        props: {
+            data
+        },
+    }
+}
+
 
 export default News;
