@@ -133,15 +133,20 @@
                 flex-wrap: wrap;
 
                 .emp-box {
-                    margin: 5px 10px;
+                    width: 240px;
+                    margin: 10px;
+                    padding: 10px;
                     text-align: center;
-            
-                    .image {
-                        width: 240px;
-                    }
-            
+                  
                     h4 {
-                        margin-top: 10px;
+                        margin: 10px 0;
+                        height: 40px;
+                    }
+
+                    small {
+                        display: block;
+                        padding-bottom: 10px;
+                        border-bottom: 1px solid silver;
                     }
             
                     a {
@@ -305,8 +310,18 @@
         .content {
             width: 100%;
 
-            .contact-list {
+            .content-list {
                 flex-direction: column;
+                
+                .employees {
+                    justify-content: center;
+
+                    .emp-box {
+                        width: 280px;
+                       
+                    }
+                }
+
             }
             .presidents {
                 display: none;
@@ -314,22 +329,4 @@
         }
     }
     
-}
-
-@media screen and (max-width: 620px) {
-    .wrapper {
-        .content {
-            .content-list {
-                .employees {
-                    justify-content: center;
-
-                    .emp-box {
-                        .image {
-                            width: 280px;
-                        }
-                    }
-                }
-            }
-        }
-    }    
 }

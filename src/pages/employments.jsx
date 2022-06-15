@@ -5,8 +5,9 @@ import Link from 'next/link';
 import President from '../components/Kings';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
+import { BACKEND_URL } from '../types';
 
-const Employments = () => {
+const Employments = ({data}) => {
     const { t } = useTranslation();
     const router = useRouter()
 
@@ -19,21 +20,16 @@ const Employments = () => {
                 <div className="content">
                     <div className="content-list">
                         <div className="employees">
-                            <div className="emp-box">
-                                <div className="image">
-                                    <Image src={'/icons/narimbetov4.jpg'} width={300} height={400} alt="image"/>
+                            {data.map((employee, i) => (
+                                <div className="emp-box" key={i}>
+                                    <div className="image">
+                                        <Image src={employee.image} width={300} height={400} alt="image"/>
+                                    </div>
+                                    <h4>{employee.fio}</h4>
+                                    {/* <small>{router.locale == "kz" ? employee.position_kk : employee.position}</small> */}
+                                    <Link href=""><a>Сұрақ қою</a></Link>
                                 </div>
-                                <div className="rating">
-                                    <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                                    <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                                    <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                                    <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                                    <Image src="https://img.icons8.com/fluency/48/000000/star.png" width={24} height={24} alt="image"/>
-                                </div>
-                                <h4>Жорабаев Жамалбек Асанұлы</h4>
-
-                                <Link href={'/'}><a>Сұрақ қою</a></Link>
-                            </div>
+                            ))}
                         </div>
                     </div>
                     <President />
@@ -41,6 +37,19 @@ const Employments = () => {
             </div>
         </Layout>
     )
+}
+
+export async function getServerSideProps(context) {
+    
+    const res = await fetch(`${BACKEND_URL}/employees/category/4`)
+    const data = await res.json();
+
+
+    return {
+        props: {
+            data
+        }
+    }
 }
 
 export default Employments;
