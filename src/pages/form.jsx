@@ -31,6 +31,9 @@ const Form = () => {
                                 <textarea name="" id="" cols="30" rows="10"></textarea>
                             </div>
                             <div className="form-group">
+                                <input type="file" />
+                            </div>
+                            <div className="form-group">
                                 <button>Жіберу</button>
                             </div>
                         </div>

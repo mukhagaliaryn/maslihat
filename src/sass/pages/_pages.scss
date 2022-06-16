@@ -48,6 +48,8 @@
                 }
             }
 
+            // ==================================================
+
             .file-box {
                 display: flex;
                 justify-content: space-around;
@@ -187,7 +189,7 @@
                     }
                 }
             }
-
+            
             .emp-profile {
                 display: flex;
 
@@ -316,6 +318,43 @@
                     }
                 }
             }
+
+            // ===========================================
+            .form {
+                width: 100%;
+                align-items: center;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+
+                .form-group {
+                    padding: 10px 0;
+
+                    input, textarea {
+                        padding: 7px 20px;
+                        font-size: 14px;
+                        border-radius: 5px;
+                        font-family: "Inter", sans-serif;
+                        border: 1px solid silver;
+                        resize: vertical;
+                    }
+
+                    button {
+                        padding: 7px 40px;
+                        background-color: black;
+                        color: white;
+                        cursor: pointer;
+                        font-size: 14px;
+                        font-family: 'Inter', sans-serif;
+                        border-radius: 5px;
+                        transition: all .3s;
+
+                        &:hover {
+                            opacity: .7;
+                        }
+                    }
+                }
+            }
         }
 
 
@@ -365,6 +404,37 @@
             .content-list {
                 flex-direction: column;
 
+                // ================================
+                .box {
+                    .image {
+                        width: 30%;
+                    }
+
+                    .body {
+                        width: 70%;
+                        
+                        h2 {
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        small {
+                            display: block;
+                            text-align: center;
+                        }
+
+                        .phone, .email {
+                            margin-top: 10px;
+    
+                            span {
+                                margin-left: 10px;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                
+
                 // =================================
                 .reglament {
                     .reg-list {
@@ -404,7 +474,7 @@
                 }
 
             }
-            
+
             // =========================
             .presidents {
                 display: none;

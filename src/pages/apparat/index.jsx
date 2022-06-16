@@ -30,11 +30,11 @@ const Apparat = ({data}) => {
                                     <h2>{apparat.fio}</h2>
                                     <small>{router.locale == "kz" ? apparat.position_kk : apparat.position}</small>
                                     <div className="phone">
-                                        <Image width={40} height={40} src="https://img.icons8.com/ios/50/undefined/phone.png"/>
+                                        <Image width={30} height={30} src="https://img.icons8.com/ios/50/undefined/phone.png"/>
                                         <span>{apparat.phone}</span>
                                     </div>
                                     <div className="email">
-                                        <Image width={40} height={40} src="https://img.icons8.com/ios/50/undefined/new-post.png"/>
+                                        <Image width={30} height={30} src="https://img.icons8.com/ios/50/undefined/new-post.png"/>
                                         <span>{apparat.email}</span>
                                     </div>
                                 </div>
