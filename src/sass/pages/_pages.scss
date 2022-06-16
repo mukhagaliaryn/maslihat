@@ -327,7 +327,16 @@
 
             .content-list {
                 flex-direction: column;
+
+                // =================================
+                .reglament {
+                    .reg-list {
+                        overflow-x: auto;
+                    }
+                }
+
                 
+                // ===================================
                 .employees {
                     justify-content: center;
 
