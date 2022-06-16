@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="copy">
                 <p>{t("common:footer.copy")}</p>
             </div>
-            <Link href={"/"}><a>{t("common:footer.old")}</a></Link>
+            <Link href={"/https://www.gov.kz/memleket/entities/turkestan-baidibek-audany?lang=kk"}><a>{t("common:footer.old")}</a></Link>
         </div>
     )
 }
