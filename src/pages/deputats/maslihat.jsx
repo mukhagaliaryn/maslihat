@@ -4,6 +4,7 @@ import President from '../../components/Kings';
 import Layout from '../../layouts';
 import { BACKEND_URL } from '../../types';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const MaslihatHatshylary = ({data}) => {
     const { t } = useTranslation();
@@ -22,7 +23,7 @@ const MaslihatHatshylary = ({data}) => {
                                     <div className="image">
                                         <Image src={employee.image} width={300} height={400} alt="image"/>
                                     </div>
-                                    <h4>{employee.fio}</h4>
+                                    <h4><Link href={`/employments/${encodeURIComponent(employee.id)}`}><a>{employee.fio}</a></Link></h4>
                                     <small></small>
                                 </div>
                             ))}

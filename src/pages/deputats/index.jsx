@@ -23,9 +23,9 @@ const Deputats = ({data}) => {
                                     <div className="image">
                                         <Image src={employee.image} width={300} height={400} alt="image"/>
                                     </div>
-                                    <h4>{employee.fio}</h4>
+                                    <h4><Link href={`/employments/${encodeURIComponent(employee.id)}`}><a>{employee.fio}</a></Link></h4>
                                     <small></small>
-                                    <Link href={"/form"}><a>{t("common:news.question")}</a></Link>
+                                    <Link href={"/form"}><a className='q'>{t("common:news.question")}</a></Link>
                                 </div>
                             ))}
                         </div>

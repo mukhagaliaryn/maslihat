@@ -1,11 +1,11 @@
 import React from 'react';
-import Layout from '../layouts';
+import Layout from '../../layouts';
 import Image from 'next/image';
 import Link from 'next/link';
-import President from '../components/Kings';
+import President from '../../components/Kings';
 import useTranslation from 'next-translate/useTranslation';
 import { useRouter } from 'next/router';
-import { BACKEND_URL } from '../types';
+import { BACKEND_URL } from '../../types';
 
 const Employments = ({data}) => {
     const { t } = useTranslation();
@@ -25,7 +25,7 @@ const Employments = ({data}) => {
                                     <div className="image">
                                         <Image src={employee.image} width={300} height={400} alt="image"/>
                                     </div>
-                                    <h4>{employee.fio}</h4>
+                                    <h4><Link href={`/employments/${encodeURIComponent(employee.id)}`}><a>{employee.fio}</a></Link></h4>
                                     <small>{router.locale == "kz" ? employee.position_kk : employee.position}</small>
                                 </div>
                             ))}

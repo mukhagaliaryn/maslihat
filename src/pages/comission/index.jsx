@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { BACKEND_URL } from '../../types';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
+import Link from 'next/link';
 
 const CommissionList = ({data}) => {
     const router = useRouter();
@@ -24,7 +25,7 @@ const CommissionList = ({data}) => {
                                     <div className="image">
                                         <Image src={employee.image} width={300} height={400} alt="image"/>
                                     </div>
-                                    <h4>{employee.fio}</h4>
+                                    <h4><Link href={`/employments/${encodeURIComponent(employee.id)}`}><a>{employee.fio}</a></Link></h4>
                                     <small>{router.locale == "kz" ? employee.position_kk : employee.position}</small>
                                 </div>
                             ))}

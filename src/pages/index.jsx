@@ -96,7 +96,7 @@ const Index = ({anons, news, employees}) => {
                         </div>
                         <h4>{emp.fio}</h4>
 
-                        <Link href={'/form'}><a>{t("common:main.employments.q")}</a></Link>
+                        <Link href={'/form'}><a className='q'>{t("common:main.employments.q")}</a></Link>
                     </div>
                 ))}
                 
