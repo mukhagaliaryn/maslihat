@@ -13,6 +13,10 @@ const Index = ({anons, news, employees}) => {
     const { t } = useTranslation();
     const router = useRouter()
     
+    const object = employees.find((obj) => {
+        return obj.id === 3
+    })
+
     return (
         <Layout>
             <div className="landing" style={{backgroundImage: `url('icons/1.jpg')`}}>
@@ -37,10 +41,10 @@ const Index = ({anons, news, employees}) => {
             <div className="last-news">
                 <div className="assistance">
                     <div className="image">
-                        <Image src='/icons/narimbetov4.jpg' width={300} height={400} alt="image"/>
+                        <Image src={object.image} width={300} height={400} alt="image"/>
                     </div>
-                    <h3><Link href={"/"}><a>Нарымбетов Бахадыр Мәдәліұлы</a></Link></h3>
-                    <p>Шымкент қаласы мәслихатының хатшысы</p>
+                    <h3><Link href={"/"}><a>{object.fio}</a></Link></h3>
+                    <p>{router.locale == "kz" ? object.position_kk : object.position}</p>
                     <ul>
                         <li>Мәслихат шешімдері</li>
                         <li>«Шымкент -2025» даму бағдарламасы</li>
