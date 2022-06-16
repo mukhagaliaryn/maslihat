@@ -10,7 +10,6 @@ import Partner from "../components/Partners";
 
 
 const Index = ({anons, news, employees}) => {
-
     const { t } = useTranslation();
     const router = useRouter()
     
@@ -31,7 +30,7 @@ const Index = ({anons, news, employees}) => {
                     <h1>{t("common:main.virtual-access.h1")}</h1>
                     <p>{t("common:main.virtual-access.p")}</p>
                 </div>
-                <Link href={'/'}><a>{t("common:main.virtual-access.button")}</a></Link>
+                <Link href={'/form'}><a>{t("common:main.virtual-access.button")}</a></Link>
             </div>
 
 
@@ -40,7 +39,7 @@ const Index = ({anons, news, employees}) => {
                     <div className="image">
                         <Image src='/icons/narimbetov4.jpg' width={300} height={400} alt="image"/>
                     </div>
-                    <h2>Нарымбетов Бахадыр Мәдәліұлы</h2>
+                    <h3><Link href={"/"}><a>Нарымбетов Бахадыр Мәдәліұлы</a></Link></h3>
                     <p>Шымкент қаласы мәслихатының хатшысы</p>
                     <ul>
                         <li>Мәслихат шешімдері</li>
@@ -72,13 +71,13 @@ const Index = ({anons, news, employees}) => {
                             </div>
                             <h3>{router.locale == 'kz' ? anon.title_kk : anon.title}</h3>
                             <p>{anon.date}</p>
-                            <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
+                            <Link href={`/anons/${encodeURIComponent(anon.id)}`}><a>{t("common:main.announcement.more")}</a></Link>
                         </div>
                     ))}
                 </div>
 
                 <div className="see-more">
-                    <Link href={'/'}><a>{t("common:main.announcement.more")}</a></Link>
+                    <Link href={'/anons'}><a>{t("common:main.announcement.more")}</a></Link>
                 </div>
             </div>
 
@@ -97,7 +96,7 @@ const Index = ({anons, news, employees}) => {
                         </div>
                         <h4>{emp.fio}</h4>
 
-                        <Link href={'/'}><a>{t("common:main.employments.q")}</a></Link>
+                        <Link href={'/form'}><a>{t("common:main.employments.q")}</a></Link>
                     </div>
                 ))}
                 

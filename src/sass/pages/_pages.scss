@@ -85,7 +85,7 @@
                     padding: 20px 0;
                 }
 
-                .reg-list{
+                .reg-list {
                     display: flex;
                     flex-direction: column;
 
@@ -99,6 +99,21 @@
                             padding: 20px;
                             font-size: 14px;
                             border-bottom: 1px solid silver;
+                        }
+
+                        a.more {
+                            padding: 10px 20px;
+                            background-color: black;
+                            color: white;
+                            display: inline-block;
+                            margin: 10px 10px 10px 20px;
+                            text-decoration: none;
+                            border-radius: 5px;
+                            transition: all .3s;
+        
+                            &:hover {
+                                opacity: .7;
+                            }
                         }
                     }
                 }

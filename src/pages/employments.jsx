@@ -40,7 +40,7 @@ const Employments = ({data}) => {
 
 export async function getServerSideProps(context) {
     
-    const res = await fetch(`${BACKEND_URL}/employees/category/4`)
+    const res = await fetch(`${BACKEND_URL}/employees/`)
     const data = await res.json();
 
 
