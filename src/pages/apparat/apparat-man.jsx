@@ -2,9 +2,14 @@ import useTranslation from 'next-translate/useTranslation';
 import React from 'react';
 import President from '../../components/Kings';
 import Layout from '../../layouts';
+import ReactHtmlParser from 'react-html-parser';
+import { BACKEND_URL } from '../../types';
+import { useRouter } from 'next/router';
 
-const ApparatMan = () => {
+
+const ApparatMan = ({data}) => {
     const { t } = useTranslation();
+    const router = useRouter()
     
     return (
         <Layout title={t("common:header.navbar.second.third")}>
@@ -15,7 +20,16 @@ const ApparatMan = () => {
                 
                 <div className="content">
                     <div className="content-list">
-                        <h1>Ақпаратқа қол жеткізу мәселелері бойынша уәкілетті тұлғалар тізімі</h1>                            
+                        <div className="reglament">
+                            <div className="reg-list">
+                                {data.map((solution, i) => (
+                                    <div className="reg-box" key={i}>
+                                        <h4>{router.locale == "kz" ? solution.title_kk : solution.title}</h4>
+                                        <span>{ReactHtmlParser(router.locale == "kz" ? solution.content_kk: solution.content)}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>                            
                     </div>
 
                     <President />
@@ -23,6 +37,19 @@ const ApparatMan = () => {
             </div>
         </Layout>
     )
+}
+
+export async function getServerSideProps(context) {
+    
+    const res = await fetch(`${BACKEND_URL}/solution/category/9`)
+    const data = await res.json();
+
+
+    return {
+        props: {
+            data
+        }
+    }
 }
 
 export default ApparatMan;

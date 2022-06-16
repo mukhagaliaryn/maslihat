@@ -30,7 +30,7 @@ const Header = () => {
                     <Link href={'/'}><a>{t("common:header.up-header.first")}</a></Link>
                     <Link href={'/'}><a >Фотогалерея</a></Link>
                     <Link href={'/'}><a>Видеогалерея</a></Link>
-                    <Link href={'/'}><a>{t("common:header.up-header.second")}</a></Link>
+                    <Link href={'/budget'}><a>{t("common:header.up-header.second")}</a></Link>
                     <Link href={'/contact'}><a>{t("common:header.up-header.third")}</a></Link>
                     <div className="lng">
                     {router.locales.map(locale => (

@@ -3,18 +3,19 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import President from '../components/Kings';
 import Layout from '../layouts';
-import ReactHtmlParser from 'react-html-parser';
 import { BACKEND_URL } from '../types';
+import ReactHtmlParser from 'react-html-parser';
 
-const Public = ({data}) => {
+
+const Budget = ({data}) => {
     const { t } = useTranslation();
     const router = useRouter()
 
     return (
-        <Layout title={t("common:header.navbar.eight")}>
+        <Layout title={t("common:header.up-header.second")}>
             <div className="wrapper">
                 <div className="title">
-                    <h1>{t("common:header.navbar.eight")}</h1>
+                    <h1>{t("common:header.up-header.second")}</h1>
                 </div>
 
                 <div className="content">
@@ -28,7 +29,7 @@ const Public = ({data}) => {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </div>  
                     </div>
 
                     <President />
@@ -40,7 +41,7 @@ const Public = ({data}) => {
 
 export async function getServerSideProps(context) {
     
-    const res = await fetch(`${BACKEND_URL}/solution/category/7`)
+    const res = await fetch(`${BACKEND_URL}/solution/category/8`)
     const data = await res.json();
 
 
@@ -51,5 +52,4 @@ export async function getServerSideProps(context) {
     }
 }
 
-
-export default Public;
+export default Budget;

@@ -28,12 +28,16 @@ const Plan = ({data}) => {
                             <div className="plan-list">
                                 {data.map((plan, i) => (
                                     <div className="plan-box" key={i}>
-                                        <h4>{router.locale == 'kz' ? plan.section_kk: plan.section_ru}</h4>
-                                        <span>{router.locale == 'kz' ? plan.desc_kk : plan.desc}</span>
-                                        <span>{router.locale == 'kz' ? plan.commission_kk : plan.commission}</span>
+                                        <h4>{router.locale == 'kz' ? plan.name_kk: plan.name}</h4>
+                                        {plan.plan_section.map((s, i) => (
+                                            <React.Fragment key={i}>
+                                                <span>{router.locale == 'kz' ? s.desc_kk : s.desc}</span>
+                                                <span>{router.locale == 'kz' ? s.commission_kk : s.commission}</span>
+                                            </React.Fragment>
+                                        ))}
+                                        
                                     </div>
                                 ))}
-
                             </div>
                         </div>
                     </div>

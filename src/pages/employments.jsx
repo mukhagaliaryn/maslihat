@@ -26,8 +26,7 @@ const Employments = ({data}) => {
                                         <Image src={employee.image} width={300} height={400} alt="image"/>
                                     </div>
                                     <h4>{employee.fio}</h4>
-                                    {/* <small>{router.locale == "kz" ? employee.position_kk : employee.position}</small> */}
-                                    <Link href=""><a>Сұрақ қою</a></Link>
+                                    <small>{router.locale == "kz" ? employee.position_kk : employee.position}</small>
                                 </div>
                             ))}
                         </div>
