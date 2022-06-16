@@ -25,7 +25,7 @@ const Deputats = ({data}) => {
                                     </div>
                                     <h4>{employee.fio}</h4>
                                     <small></small>
-                                    <Link href=""><a>{t("common:news.question")}</a></Link>
+                                    <Link href={"/form"}><a>{t("common:news.question")}</a></Link>
                                 </div>
                             ))}
                         </div>

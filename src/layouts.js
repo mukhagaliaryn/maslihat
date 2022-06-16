@@ -9,6 +9,7 @@ const Layout = (props) => {
         <React.Fragment>
             <Head>
                 <title>{props.title}</title>
+                <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
                 <meta name="description" content={props.content} />
                 <link rel="shortcut icon" href="/icons/logo.png"/>
             </Head>
