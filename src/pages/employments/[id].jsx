@@ -4,6 +4,7 @@ import President from '../../components/Kings';
 import Layout from '../../layouts';
 import Image from 'next/image';
 import { BACKEND_URL } from '../../types';
+import ReactHtmlParser from 'react-html-parser';
 
 const EmploymentDetail = ({data}) => {
     const router = useRouter();
@@ -24,7 +25,7 @@ const EmploymentDetail = ({data}) => {
                             <div className="profile-body">
                                 <h2>{data.fio}</h2>
                                 <small>{router.locale == "kz" ? data.position_kk : data.position}</small>
-                                <span></span>
+                                <span>{ReactHtmlParser(router.locale == "kz" ? data.content_kk : data.content)}</span>
                             </div>
                         </div>
                     </div>
