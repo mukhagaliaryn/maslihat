@@ -3,13 +3,31 @@ import Layout from '../layouts';
 import President from '../components/Kings';
 import useTranslation from 'next-translate/useTranslation';
 import { useForm } from "react-hook-form";
+import { BACKEND_URL } from '../types';
 
 const Form = () => {
     const { t } = useTranslation();
     const { register, handleSubmit } = useForm();
 
-    const onSumbit = (data) => {
-        console.log(data);
+    const onSumbit = async (data) => {
+        const formData = new FormData()
+        formData.append('to_fio', data.deputat);
+        formData.append('from_fio', data.fio);
+        formData.append('phone', data.phone);
+        formData.append('email', data.email);
+        formData.append('iin', data.iin);
+        formData.append('content', data.content);
+        data.file[0] && formData.append('file', data.file[0]);
+
+        try {
+            await fetch(`${BACKEND_URL}/message/`, {
+                method: "POST",
+                body: formData
+            })
+            alert("Хабарлама жіберілді!")
+        } catch(e) {
+            console.log(e);
+        }
     }
 
     return (
@@ -23,10 +41,10 @@ const Form = () => {
                         <form className="form" onSubmit={handleSubmit(onSumbit)}>
                             <div className="form-group">
                                 <select {...register("deputat")}>
-                                    <option value="maryn">Арын Мұқағали Қажымұлы</option>
-                                    <option value="earyn">Арын Ерғали Қажымұлы</option>
-                                    <option value="talypbay">Жалғасбек Тәліпбай Ержанұлы</option>
-                                    <option value="qadyraly">Қадіралы Орынбасар Маратұлы</option>
+                                    <option value="Арын Мұқағали Қажымұлы">Арын Мұқағали Қажымұлы</option>
+                                    <option value="Арын Ерғали Қажымұлы">Арын Ерғали Қажымұлы</option>
+                                    <option value="Жалғасбек Тәліпбай Ержанұлы">Жалғасбек Тәліпбай Ержанұлы</option>
+                                    <option value="Қадіралы Орынбасар Маратұлы">Қадіралы Орынбасар Маратұлы</option>
                                 </select>
                             </div>
                             <div className="form-group">
@@ -45,7 +63,7 @@ const Form = () => {
                                 <textarea name="" {...register("content")} cols="30" rows="10"></textarea>
                             </div>
                             <div className="form-group">
-                                <input type="file" {...register("file")} required/>
+                                <input type="file" {...register("file")}/>
                             </div>
                             <div className="form-group">
                                 <button>Жіберу</button>
