@@ -2,9 +2,15 @@ import React from 'react';
 import Layout from '../layouts';
 import President from '../components/Kings';
 import useTranslation from 'next-translate/useTranslation';
+import { useForm } from "react-hook-form";
 
 const Form = () => {
     const { t } = useTranslation();
+    const { register, handleSubmit } = useForm();
+
+    const onSumbit = (data) => {
+        console.log(data);
+    }
 
     return (
         <Layout title={t("common:form.h1")}>
@@ -14,29 +20,37 @@ const Form = () => {
                 </div>
                 <div className="content">
                     <div className="content-list">
-                        <div className="form">
+                        <form className="form" onSubmit={handleSubmit(onSumbit)}>
                             <div className="form-group">
-                                <input type="text" placeholder='Аты-жөні...' />
+                                <select {...register("deputat")}>
+                                    <option value="maryn">Арын Мұқағали Қажымұлы</option>
+                                    <option value="earyn">Арын Ерғали Қажымұлы</option>
+                                    <option value="talypbay">Жалғасбек Тәліпбай Ержанұлы</option>
+                                    <option value="qadyraly">Қадіралы Орынбасар Маратұлы</option>
+                                </select>
                             </div>
                             <div className="form-group">
-                                <input type="phone" placeholder='Телефон нөмері...' />
+                                <input type="text" {...register("fio")} placeholder='Аты-жөні...' required/>
                             </div>
                             <div className="form-group">
-                                <input type="number" placeholder='ЖСН' />
+                                <input type="phone" {...register("phone")} placeholder='Телефон нөмері...' required/>
                             </div>
                             <div className="form-group">
-                                <input type="email" placeholder='example@gmail.com' />
+                                <input type="number" {...register("iin")} placeholder='ЖСН' required/>
                             </div>
                             <div className="form-group">
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <input type="email" {...register("email")} placeholder='example@gmail.com' required/>
                             </div>
                             <div className="form-group">
-                                <input type="file" />
+                                <textarea name="" {...register("content")} cols="30" rows="10"></textarea>
+                            </div>
+                            <div className="form-group">
+                                <input type="file" {...register("file")} required/>
                             </div>
                             <div className="form-group">
                                 <button>Жіберу</button>
                             </div>
-                        </div>
+                        </form>
                     </div> 
 
                     <President />

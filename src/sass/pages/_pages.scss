@@ -323,8 +323,7 @@
 
             // ===========================================
             .form {
-                width: 100%;
-                align-items: center;
+                width: 80%;
                 padding: 20px;
                 display: flex;
                 flex-direction: column;
@@ -332,12 +331,16 @@
                 .form-group {
                     padding: 10px 0;
 
-                    input, textarea {
-                        padding: 7px 20px;
+                    input, select, textarea {
+                        width: 100%;
+                        padding: 10px;
                         font-size: 14px;
                         border-radius: 5px;
                         font-family: "Inter", sans-serif;
                         border: 1px solid silver;
+                    }
+
+                    textarea {
                         resize: vertical;
                     }
 
